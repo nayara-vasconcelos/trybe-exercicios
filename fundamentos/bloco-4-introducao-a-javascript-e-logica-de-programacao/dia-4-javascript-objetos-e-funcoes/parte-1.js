@@ -12,3 +12,10 @@ console.log('Bem-vinda, ' + info.personagem + '!'); // dot notatiom
 
 console.log('Bem-vinda, ' + info['personagem'] + '!'); //Bracket notation
 
+// 2) Insira uma nova propriedade com o nome chave 'recorrente' e o valor 'Sim' e, em seguida, imprima o objeto no console.
+
+info.recorrente = 'Sim';
+console.log(info); // dot notation
+
+info['recorrente'] = 'Sim';
+console.log(info); // bracket notation
