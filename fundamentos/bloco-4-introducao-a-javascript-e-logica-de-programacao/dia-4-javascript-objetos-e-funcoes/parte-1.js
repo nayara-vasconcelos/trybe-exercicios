@@ -1,0 +1,14 @@
+//Exercícios - Parte I - Objetos e For/in
+
+let info = {
+    personagem: 'Margarida',
+    origem: 'Pato Donald',
+    nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
+};
+
+// 1) Imprima no console uma mensagem de boas-vindas para a personagem acima, incluindo o seu nome.
+
+console.log('Bem-vinda, ' + info.personagem + '!'); // dot notatiom
+
+console.log('Bem-vinda, ' + info['personagem'] + '!'); //Bracket notation
+
