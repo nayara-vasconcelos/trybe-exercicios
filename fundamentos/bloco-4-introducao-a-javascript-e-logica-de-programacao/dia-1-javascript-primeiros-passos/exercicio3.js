@@ -10,4 +10,5 @@ if (a > b && a > c) {
     console.log(`O maior número é: ${c}`);
 } else {
     console.log(`O maior número é: ${b}`);
-};
+}
+
