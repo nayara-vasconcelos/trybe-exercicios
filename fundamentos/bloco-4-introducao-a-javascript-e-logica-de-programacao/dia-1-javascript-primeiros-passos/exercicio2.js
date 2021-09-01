@@ -1,4 +1,4 @@
-//Programa 2
+//Programa 2: Compara os números entre duas entradas.
 const a = 9;
 const b = 6;
 

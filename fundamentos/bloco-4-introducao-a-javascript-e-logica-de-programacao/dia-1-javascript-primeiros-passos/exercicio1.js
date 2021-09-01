@@ -1,4 +1,4 @@
-//Programa 1
+//Programa 1: Operações matemáticas simples.
 const a = 5;
 const b = 4;
 
