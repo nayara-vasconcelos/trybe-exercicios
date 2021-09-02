@@ -1,4 +1,5 @@
 /**
+ * Exercício 5.1 - DOM e Seletores
  * Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
    document.getElementById()
  * - document.getElementsByClassName()
@@ -10,3 +11,11 @@
  * 5. Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  * 6. Crie uma função que exiba o conteúdo de todas as tags <p> no console.
  */
+
+
+// 1. Função para mudar o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos.
+function changeTextOfATag(tag, index, text){
+document.getElementsByTagName(tag)[index].innerText = text;
+}
+
+changeTextOfATag('p', 1, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat repudiandae sed amet quas corrupti libero voluptatem natus soluta modi quae suscipit rerum reprehenderit beatae accusamus, quaerat ratione, qui laudantium voluptate.');
