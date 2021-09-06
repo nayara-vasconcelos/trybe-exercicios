@@ -14,8 +14,10 @@
 
 
 // 1. Função para mudar o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos.
-function changeTextOfATag(tag, index, text){
-document.getElementsByTagName(tag)[index].innerText = text;
+function changeTextOfATag(tagString, indexNumber, textString){
+    document.getElementsByTagName(tagString)[indexNumber].innerText = textString;
 }
 
 changeTextOfATag('p', 1, 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat repudiandae sed amet quas corrupti libero voluptatem natus soluta modi quae suscipit rerum reprehenderit beatae accusamus, quaerat ratione, qui laudantium voluptate.');
+
+// Função para mudar a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109) = #4ca46d).
