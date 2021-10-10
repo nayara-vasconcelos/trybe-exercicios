@@ -29,3 +29,9 @@ for (let number of numbers) {
 }
 
 console.log(sumWithForOf);
+
+
+// Exercício 3:
+
+const arithmeticMean = sumWithFor/ numbers.length;
+console.log(arithmeticMean);
