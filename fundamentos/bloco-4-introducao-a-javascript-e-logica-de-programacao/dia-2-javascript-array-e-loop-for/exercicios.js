@@ -68,3 +68,35 @@ for (let number of numbers) {
 }
 
 console.log(highestNumberWithForOf);
+
+
+// Exercício 6:
+
+let totalOddNumbersWithFor = [];
+
+for (let i = 0; i < numbers.length; i +=1) {
+  if ((numbers[i] % 2) === 1) {
+    totalOddNumbersWithFor.push(numbers[i]);
+  }
+}
+
+if (totalOddNumbersWithFor.length > 0) {
+  console.log(totalOddNumbersWithFor.length); // Total de números ímpares.
+} else {
+  console.log('nenhum valor ímpar encontrado');
+}
+
+
+let totalOddNumbersWithForOf = [];
+
+for (let number of numbers) {
+  if ((number % 2) === 1) {
+    totalOddNumbersWithForOf.push(number);
+  }
+}
+
+if (totalOddNumbersWithForOf.length > 0) {
+  console.log(totalOddNumbersWithForOf.length); // Total de números ímpares.
+} else {
+  console.log('nenhum valor ímpar encontrado');
+}
