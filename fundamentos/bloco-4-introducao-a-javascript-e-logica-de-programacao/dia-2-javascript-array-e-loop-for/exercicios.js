@@ -137,3 +137,25 @@ for (let i = startingNumber; i <= limitNumber; i+= 1) {
 }
 
 console.log(array);
+
+
+// Exercício 9:
+
+let arrayDividedBy2WithFor = [];
+
+for (let i = 0; i < array.length; i+= 1) {
+  let div = (array[i] / 2);
+arrayDividedBy2WithFor.push(div);
+}
+
+console.log(arrayDividedBy2WithFor);
+
+
+let arrayDividedBy2WithForOf = [];
+
+for (let number of array) {
+  let div = (number / 2);
+  arrayDividedBy2WithForOf.push(div);
+}
+
+console.log(arrayDividedBy2WithForOf);
