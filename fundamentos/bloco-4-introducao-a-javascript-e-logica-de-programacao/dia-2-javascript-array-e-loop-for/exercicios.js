@@ -44,3 +44,27 @@ if (arithmeticMean > 20) {
 } else {
   console.log('valor menor ou igual a 20');
 }
+
+
+// Exercício 5:
+
+let highestNumberWithFor = numbers[0];
+
+for (let i = 1; i < numbers.length; i +=1) {
+  if (numbers[i] > highestNumberWithFor) {
+    highestNumberWithFor = numbers[i];
+  }
+}
+
+console.log(highestNumberWithFor);
+
+
+let highestNumberWithForOf = numbers[0];
+
+for (let number of numbers) {
+  if (number > highestNumberWithForOf) {
+    highestNumberWithForOf = number;
+  }
+}
+
+console.log(highestNumberWithForOf);
