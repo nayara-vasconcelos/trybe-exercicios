@@ -124,3 +124,16 @@ for (let number of numbers) {
 }
 
 console.log(lowestNumberWithForOf);
+
+
+// Exercício 8:
+
+let startingNumber = 1;
+let limitNumber = 25;
+let array = [];
+
+for (let i = startingNumber; i <= limitNumber; i+= 1) {
+  array.push(i);
+}
+
+console.log(array);
