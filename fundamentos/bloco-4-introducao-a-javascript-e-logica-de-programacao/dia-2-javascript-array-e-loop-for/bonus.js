@@ -56,3 +56,21 @@ for (let index1 = (numbers.length - 1); index1 > 0; index1 -= 1) {
 }
 
 console.log(numbers);
+
+
+// Exercício 3:
+
+let numbers2 = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let newArray = [];
+
+for (let i = 0; i < numbers2.length; i += 1) {
+  if([i + 1] < numbers2.length) {
+    let multipliedByNext = numbers2[i] * numbers2[i + 1];
+    newArray.push(multipliedByNext);
+  } else {
+    multipliedByNext = numbers2[i] * 2;
+    newArray.push(multipliedByNext);
+  }
+}
+
+console.log(newArray);
