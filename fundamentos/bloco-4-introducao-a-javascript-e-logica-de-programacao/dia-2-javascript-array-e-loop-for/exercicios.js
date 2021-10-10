@@ -100,3 +100,27 @@ if (totalOddNumbersWithForOf.length > 0) {
 } else {
   console.log('nenhum valor ímpar encontrado');
 }
+
+
+// Exercício 7:
+
+let lowestNumberWithFor = numbers[0];
+
+for (let i = 1; i < numbers.length; i +=1) {
+  if (numbers[i] < lowestNumberWithFor) {
+    lowestNumberWithFor = numbers[i];
+  }
+}
+
+console.log(lowestNumberWithFor);
+
+
+let lowestNumberWithForOf = numbers[0];
+
+for (let number of numbers) {
+  if (number < lowestNumberWithForOf) {
+    lowestNumberWithForOf = number;
+  }
+}
+
+console.log(lowestNumberWithForOf);
