@@ -132,3 +132,17 @@ const gameActions = {
 
   turnResults: () => battleMembers
 };
+
+
+// Teste
+const simulateTurns = (times) => {
+  for (let i = 0; i < times; i += 1) {
+    gameActions.warriorTurn(warriorAttack);
+    gameActions.mageTurn(mageAttack);
+    gameActions.dragonTurn(dragonAttack);
+
+    console.log(gameActions.turnResults());
+  }
+}
+
+simulateTurns(3);
