@@ -76,3 +76,59 @@ const dragonAttack = () => {
 
   return turnStatus;
 }
+
+
+// Parte 2:
+
+const gameActions = {
+  /**
+   * 1 - Crie a primeira HOF que compõe o objeto gameActions.
+  * Ela será a função que simula o turno do personagem warrior.
+  * Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem warrior e atualizará os healthPoints do monstro dragon.
+  * Além disso, ela também deve atualizar o valor da chave damage do warrior.
+  */
+
+  warriorTurn: (warriorAttack) => {
+    const warriorDamage = warriorAttack();
+    warrior.damage = warriorDamage;
+    dragon.healthPoints -= warriorDamage;
+  },
+
+  /**
+   * 2 - Crie a segunda HOF que compõe o objeto gameActions.
+   * Ela será a função que simula o turno do personagem mage.
+   * Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem mage e atualizará os healthPoints do monstro dragon.
+   * Além disto ela também deve atualizar o valor das chaves damage e mana do mage.
+   */
+
+  mageTurn: (mageAttack) => {
+    const { mageDamage, manaSpent } = mageAttack();
+    mage.mana -= manaSpent;
+    if (typeof mageDamage === 'number') {
+      mage.damage = mageDamage;
+      dragon.healthPoints -= mageDamage;
+    } else {
+      console.log(mageDamage);
+    }
+  },
+
+  /**
+   * 3 - Crie a terceira HOF que compõe o objeto gameActions.
+   * Ela será a função que simula o turno do monstro dragon.
+   * Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo monstro dragon e atualizará os healthPoints dos personagens mage e warrior.
+   * Além disto ela também deve atualizar o valor da chave damage do monstro.
+   */
+
+  dragonTurn: (dragonAttack) => {
+    const dragonDamage = dragonAttack();
+    dragon.damage = dragonDamage;
+    warrior.healthPoints -= dragonDamage;
+    mage.healthPoints -= dragonDamage;
+  },
+
+  /**
+   * 4 - Adicione ao objeto gameActions uma função que retorne o objeto battleMembers atualizado e faça um console.log para visualizar o resultado final do turno.
+   */
+
+  turnResults: () => battleMembers
+};
