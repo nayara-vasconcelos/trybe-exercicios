@@ -136,3 +136,38 @@ const someBookWasReleaseBetween = (decade) => {
 }
 
 console.log(someBookWasReleaseBetween(80));
+
+// 7 - Faça uma função que retorne true caso nenhum author tenha nascido no mesmo ano, e false, caso contrário.
+
+// const authorUnique = () => {
+//   let result = true;
+//   books.forEach((book) => {
+//     if (result) {
+//       for(index = 1; index < books.length; index +=1) {
+//         if (book.author.birthYear === books[index].author.birthYear) {
+//           return result = false;
+//         };
+//       }
+//     }
+//   });
+
+//   return result;
+// }
+
+// Exercício 7 refatorado
+const authorUnique = () => {
+  let result = true;
+  books.forEach((book) => {
+    let uniqueAuthor = books.find((oneBook) => {
+      return ((oneBook.author.birthYear === book.author.birthYear) &&
+      (oneBook.author.name !== book.author.name));
+    });
+    if (uniqueAuthor) {
+      return result = false;
+    }
+  });
+
+  return result;
+}
+
+console.log(authorUnique());
