@@ -63,26 +63,26 @@ const books = [
 
 
 // 1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
-const authorBornIn1947 = () => {
-  const bookObject = books.find((book) => book.author.birthYear === 1947);
+const getAuthorBornIn = (year) => {
+  const bookObject = books.find((book) => book.author.birthYear === year);
   const authorName = bookObject.author.name;
   return authorName;
 }
 
-// console.log(authorBornIn1947());
+console.log(getAuthorBornIn(1947));
 
 
 //2 - Retorne o nome do livro de menor nome.
-const smallerName = () => {
-  let nameBook = books[0].name;
+const getSmallestNameOf = (array) => {
+  let smallestName = array[0].name;
   
-  books.forEach((book) => {
-    if (book.name.length < nameBook.length) {
-    nameBook = book.name;
+  array.forEach((e) => {
+    if (e.name.length < smallestName.length) {
+    smallestName = e.name;
     }
   });
 
-  return nameBook;
+  return smallestName;
 }
 
-// console.log(smallerName());
+console.log(getSmallestNameOf(books));
