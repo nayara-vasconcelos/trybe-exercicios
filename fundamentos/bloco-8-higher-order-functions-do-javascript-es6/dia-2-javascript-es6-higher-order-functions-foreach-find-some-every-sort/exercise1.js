@@ -95,3 +95,20 @@ const getNameOfBookWith = (charsNumber) => {
 }
 
 console.log(getNameOfBookWith(26));
+
+
+// 4 - Ordene os livros por data de lançamento em ordem decrescente.
+const booksOrderedByReleaseYearDesc = () => {
+  books.sort((a, b) => {
+    if (a.releaseYear < b.releaseYear) {
+      return 1;
+    }
+    if (a.releaseYear > b.releaseYear) {
+      return -1;
+    }
+    return 0;
+  });
+}
+
+booksOrderedByReleaseYearDesc()
+console.log(books);
