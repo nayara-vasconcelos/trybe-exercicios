@@ -119,17 +119,20 @@ const everyoneWasBornBetween = (inicialYear, finalYear) => {
   const everyoneWasBornBetweenYears = books.every((book) => {
     return (book.author.birthYear >= inicialYear) && (book.author.birthYear <= finalYear);
   });
+
   return everyoneWasBornBetweenYears;
 }
 
 console.log(everyoneWasBornBetween(1901, 2000)); // Século XX: 1901 - 2000
 
 // 6 - Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
-const someBookWasReleaseBetween = (inicialYear, finalYear) => {
+const someBookWasReleaseBetween = (decade) => {
   const foundSomeBook = books.some((book) => {
-    return ((book.releaseYear >= inicialYear) && (book.releaseYear <= finalYear));
+    let bookDecade = book.releaseYear % 100; // Extrai os últimos dois dígitos;
+    return ((bookDecade >= decade) && (bookDecade <= (decade + 9)));
   });
+
   return foundSomeBook;
 }
 
-console.log(someBookWasReleaseBetween(1980, 1989));
+console.log(someBookWasReleaseBetween(80));
