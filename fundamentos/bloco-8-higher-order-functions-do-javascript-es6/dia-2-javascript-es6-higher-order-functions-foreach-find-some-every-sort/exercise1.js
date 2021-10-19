@@ -123,3 +123,13 @@ const everyoneWasBornBetween = (inicialYear, finalYear) => {
 }
 
 console.log(everyoneWasBornBetween(1901, 2000)); // Século XX: 1901 - 2000
+
+// 6 - Faça uma função que retorne true, se algum livro foi lançado na década de 80, e false, caso contrário.
+const someBookWasReleaseBetween = (inicialYear, finalYear) => {
+  const foundSomeBook = books.some((book) => {
+    return ((book.releaseYear >= inicialYear) && (book.releaseYear <= finalYear));
+  });
+  return foundSomeBook;
+}
+
+console.log(someBookWasReleaseBetween(1980, 1989));
