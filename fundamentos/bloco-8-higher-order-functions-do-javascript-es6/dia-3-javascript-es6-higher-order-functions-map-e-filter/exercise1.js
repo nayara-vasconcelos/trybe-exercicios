@@ -108,7 +108,7 @@ const fantasyOrScienceFiction = () => {
   });
 
   return sciFiAndFantasy;
-}
+};
 
 console.log(fantasyOrScienceFiction());
 
@@ -131,6 +131,18 @@ const oldBooksOrdered = (currentYear) => {
   });
 
   return sortedOldBooksDesc;
-}
+};
 
 console.log(oldBooksOrdered(2021));
+
+
+// 5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas autoras de ficção científica ou fantasia.
+const fantasyOrScienceFictionAuthors = () => {
+  const sciFiAndFantasyAuthors = fantasyOrScienceFiction()
+    .map((book) => `${book.author.name}`)
+    .sort();
+
+  return sciFiAndFantasyAuthors;
+};
+
+console.log(fantasyOrScienceFictionAuthors());
