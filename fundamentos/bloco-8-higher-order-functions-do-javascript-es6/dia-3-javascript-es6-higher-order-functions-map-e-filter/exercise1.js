@@ -117,18 +117,18 @@ console.log(fantasyOrScienceFiction());
 //Dica: use as funções filter e sort.
 const oldBooksOrdered = (currentYear) => {
   const sortedOldBooksDesc = books.filter((book) => {
-    return ((currentYear - book.releaseYear) > 60);
-  })
-  .sort((a, b) => {
-    // Aqui o sort() organiza em ordem crescente o retorno do filter de acordo com a chaves do objeto. Livro mais velho -> Menor releaseYear.
-    if (a.releaseYear > b.releaseYear) {
-      return 1;
-    }
-    if (a.releaseYear < b.releaseYear) {
-      return -1;
-    }
-    return 0;
-  });
+      return ((currentYear - book.releaseYear) > 60);
+    })
+    .sort((a, b) => {
+      // Aqui o sort() organiza em ordem crescente o retorno do filter de acordo com a chaves do objeto. Livro mais velho -> Menor releaseYear.
+      if (a.releaseYear > b.releaseYear) {
+        return 1;
+      }
+      if (a.releaseYear < b.releaseYear) {
+        return -1;
+      }
+      return 0;
+    });
 
   return sortedOldBooksDesc;
 };
@@ -152,8 +152,36 @@ console.log(fantasyOrScienceFictionAuthors());
 const oldBooks = (year) => {
   const oldBooksNameList = oldBooksOrdered(year)
     .map((book) => `${book.name}`);
-  
-    return oldBooksNameList;
+
+  return oldBooksNameList;
 };
 
 console.log(oldBooks(2021));
+
+
+// 7 - Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
+// Dica: cada inicial termina com um ponto.
+const authorWithDotsOnName = (numberOfDots) => {
+  let bookName = `Número inválido`;
+
+  // Verifica se o valor da entrada é válido.
+  if ((typeof numberOfDots === 'number') &&
+    (!Number.isNaN(numberOfDots)) &&
+    (Number.isInteger(numberOfDots))) {
+    const booksObject = books.filter((book) => {
+      // Cria um array de strings a partir dos '.' do book.author.name e compara o tamanho dessa array com o valor esperado.
+      return (book.author.name.split('.').length === numberOfDots + 1);
+    });
+
+    // Verifica se a array está vazia.
+    if (booksObject.length > 0) {
+      bookName = booksObject.map((book) => `${book.name}`).join(', ');
+    } else {
+      bookName = `Não encontrado`;
+    }
+  }
+
+  return bookName;
+};
+
+console.log(authorWithDotsOnName(3));
