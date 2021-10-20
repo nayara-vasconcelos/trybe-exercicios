@@ -146,3 +146,14 @@ const fantasyOrScienceFictionAuthors = () => {
 };
 
 console.log(fantasyOrScienceFictionAuthors());
+
+
+// 6 - Crie um array com o nome de todos os livros com mais de 60 anos de publicação.
+const oldBooks = (year) => {
+  const oldBooksNameList = oldBooksOrdered(year)
+    .map((book) => `${book.name}`);
+  
+    return oldBooksNameList;
+};
+
+console.log(oldBooks(2021));
