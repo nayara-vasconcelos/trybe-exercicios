@@ -64,7 +64,7 @@ const books = [{
 // Dica: Use a função map
 const formattedBookNames = () => {
   return books.map((book) => `${book.name} - ${book.genre} - ${book.author.name}`);
-}
+};
 
 console.log(formattedBookNames());
 
@@ -92,7 +92,22 @@ const nameAndAge = () => {
       }
       return 0;
     });
+
   return nameAndAgeList;
-}
+};
 
 console.log(nameAndAge());
+
+
+// 3 - Crie um array com todos os objetos que possuem gênero ficção científica ou fantasia.
+// Dica: use a função filter;
+const fantasyOrScienceFiction = () => {
+  const sciFiAndFantasy = books.filter((book) => {
+    return ((book.genre === 'Ficção Científica') ||
+      (book.genre === 'Fantasia'));
+  });
+
+  return sciFiAndFantasy;
+}
+
+console.log(fantasyOrScienceFiction());
