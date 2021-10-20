@@ -111,3 +111,26 @@ const fantasyOrScienceFiction = () => {
 }
 
 console.log(fantasyOrScienceFiction());
+
+
+// 4 - Crie um array ordenado pelos livros com mais de 60 anos de publicação e ordene-o pelo livro mais velho.
+//Dica: use as funções filter e sort.
+const oldBooksOrdered = (currentYear) => {
+  const sortedOldBooksDesc = books.filter((book) => {
+    return ((currentYear - book.releaseYear) > 60);
+  })
+  .sort((a, b) => {
+    // Aqui o sort() organiza em ordem crescente o retorno do filter de acordo com a chaves do objeto. Livro mais velho -> Menor releaseYear.
+    if (a.releaseYear > b.releaseYear) {
+      return 1;
+    }
+    if (a.releaseYear < b.releaseYear) {
+      return -1;
+    }
+    return 0;
+  });
+
+  return sortedOldBooksDesc;
+}
+
+console.log(oldBooksOrdered(2021));
