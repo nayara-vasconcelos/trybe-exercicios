@@ -1,0 +1,76 @@
+let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+
+// Exercício 1: Ordenação crescente por bubble sort.
+
+
+// Solução da plataforma:
+
+// for (let index = 1; index < numbers.length; index += 1) {
+//   for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+//     if (numbers[index] < numbers[secondIndex]) {
+//       let position = numbers[index];
+//       numbers[index] = numbers[secondIndex];
+//       numbers[secondIndex] = position;
+//       console.log(numbers);
+//     }
+//   }
+// } 
+
+for (let index1 = (numbers.length - 1); index1 > 0; index1 -= 1) {
+  for (let index2 = 0; index2 < index1; index2 += 1) {
+    if (numbers[index2] > numbers[index2 +1]) {
+      let aux = numbers[index2];
+      numbers[index2] = numbers[index2 + 1];
+      numbers[index2 + 1] = aux;
+      console.log(numbers);
+    }
+  }
+}
+
+console.log(numbers);
+
+
+// Exercício 2: Ordenação decrescente por bubble sort.
+
+// for (let index = 1; index < numbers.length; index += 1) {
+//   for (let secondIndex = 0; secondIndex < index; secondIndex += 1) {
+//     if (numbers[index] > numbers[secondIndex]) {
+//       let position = numbers[index];
+//       numbers[index] = numbers[secondIndex];
+//       numbers[secondIndex] = position;
+//       console.log(numbers);
+//     }
+//   }
+// } 
+
+
+for (let index1 = (numbers.length - 1); index1 > 0; index1 -= 1) {
+  for (let index2 = 0; index2 < index1; index2 += 1) {
+    if (numbers[index2] < numbers[index2 +1]) {
+      let aux = numbers[index2];
+      numbers[index2] = numbers[index2 + 1];
+      numbers[index2 + 1] = aux;
+      console.log(numbers);
+    }
+  }
+}
+
+console.log(numbers);
+
+
+// Exercício 3:
+
+let numbers2 = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let newArray = [];
+
+for (let i = 0; i < numbers2.length; i += 1) {
+  if([i + 1] < numbers2.length) {
+    let multipliedByNext = numbers2[i] * numbers2[i + 1];
+    newArray.push(multipliedByNext);
+  } else {
+    multipliedByNext = numbers2[i] * 2;
+    newArray.push(multipliedByNext);
+  }
+}
+
+console.log(newArray);
