@@ -24,33 +24,38 @@
       <p>Cidade: <span id="cidade-2">São Paulo</span></p>
     </div>
     <script>
-      const ESTADO_INICIAL_1 = {
+      const INITIAL_STATE_1 = {
         nome: 'Rodrigo',
         sobrenome: 'Santos da Silva',
         endereco: 'Rua Soldado Mathias, 765',
         cidade: 'Belo Horizonte',
       };
 
-      const ESTADO_INICIAL_2 = {
+      const INITIAL_STATE_2 = {
         nome: 'Bruna',
         sobrenome: 'Santana Oliveira',
         endereco: 'Rua Holanda, 332',
         cidade: 'São Paulo',
       };
 
-      const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
+      const myFirstReducer = (state = INITIAL_STATE_1, action) => {
         switch (action.type) {
           default:
             return state;
         }
       };
 
-      const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
+      const mySecondReducer = (state = INITIAL_STATE_2, action) => {
         switch (action.type) {
           default:
             return state;
         }
       };
+
+      const combinedReducers = combineReducers({
+        myFirstReducer,
+        mySecondReducer,
+      });
     </script>
   </body>
 </html>
