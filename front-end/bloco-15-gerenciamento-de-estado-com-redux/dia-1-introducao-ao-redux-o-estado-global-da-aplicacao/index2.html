@@ -38,8 +38,19 @@
         cidade: 'São Paulo',
       };
 
+      // string actions type
+      const FIRST_ACTION_TYPE = 'CHANGE_NAME_AND_LAST_NAME_1';
+      const SECOND_ACTION_TYPE = 'CHANGE_NAME_AND_LAST_NAME_2'
+
       const myFirstReducer = (state = INITIAL_STATE_1, action) => {
         switch (action.type) {
+          case FIRST_ACTION_TYPE:
+            return {
+              ...state,
+              nome: action.nome,
+              sobrenome: action.sobrenome,
+            };
+
           default:
             return state;
         }
@@ -47,6 +58,13 @@
 
       const mySecondReducer = (state = INITIAL_STATE_2, action) => {
         switch (action.type) {
+          case SECOND_ACTION_TYPE:
+            return {
+              ...state,
+              nome: action.name,
+              sobrenome: action.sobrenome,
+            };
+
           default:
             return state;
         }
