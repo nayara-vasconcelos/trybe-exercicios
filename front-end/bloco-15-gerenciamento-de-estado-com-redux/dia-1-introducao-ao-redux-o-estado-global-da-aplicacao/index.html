@@ -1,3 +1,5 @@
+<!-- Exercício 1 -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,8 +43,23 @@
       const Redux = require('redux');
 
       const reducer = (state = INITIAL_STATE, action) => {
+        const { colors } = state;
+        const maxIndex = colors.length - 1;
+
         switch (action.type) {
-         default: 
+          case 'NEXT_COLOR':
+            return {
+              ...state,
+              index: (state.index === maxIndex) ? 0 : state.index + 1,
+            };
+
+          case 'PREVIOUS_STATE':
+            return {
+              ...state,
+              index: (state.index === 0) ? maxIndex : state.index - 1,
+            };
+
+          default: 
             return state;
         };
       };
