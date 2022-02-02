@@ -78,12 +78,11 @@
       const store = Redux.createStore(rootReducers);
 
       store.subscribe(() => {
-        // const { myFirstReducer, mySecondReducer } = store.getState();
-        console.log(store.getState());
-        // document.getElementById('nome-1').innerText = myFirstReducer.name;
-        // document.getElementById('sobrenome-1').innerText = myFirstReducer.sobrenome;
-        // document.getElementById('nome-2').innerText = mySecondReducer.nome;
-        // document.getElementById('sobrenome-2').innerText = mySecondReducer.sobrenome;
+        const { myFirstReducer, mySecondReducer } = store.getState();
+        document.getElementById('nome-1').innerText = myFirstReducer.nome;
+        document.getElementById('sobrenome-1').innerText = myFirstReducer.sobrenome;
+        document.getElementById('nome-2').innerText = mySecondReducer.nome;
+        document.getElementById('sobrenome-2').innerText = mySecondReducer.sobrenome;
       });
 
       window.onload = () => {
