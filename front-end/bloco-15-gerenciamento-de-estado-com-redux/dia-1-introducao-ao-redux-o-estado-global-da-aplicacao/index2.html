@@ -61,7 +61,7 @@
           case SECOND_ACTION_TYPE:
             return {
               ...state,
-              nome: action.name,
+              nome: action.nome,
               sobrenome: action.sobrenome,
             };
 
@@ -70,14 +70,23 @@
         }
       };
 
-      const rootReducers = combineReducers({
+      const rootReducers = Redux.combineReducers({
         myFirstReducer,
         mySecondReducer,
       });
 
-      const store = createStore(rootReducers);
+      const store = Redux.createStore(rootReducers);
 
-      windows.onload = () => {
+      store.subscribe(() => {
+        // const { myFirstReducer, mySecondReducer } = store.getState();
+        console.log(store.getState());
+        // document.getElementById('nome-1').innerText = myFirstReducer.name;
+        // document.getElementById('sobrenome-1').innerText = myFirstReducer.sobrenome;
+        // document.getElementById('nome-2').innerText = mySecondReducer.nome;
+        // document.getElementById('sobrenome-2').innerText = mySecondReducer.sobrenome;
+      });
+
+      window.onload = () => {
         setTimeout(() => {
           store.dispatch({
             type: FIRST_ACTION_TYPE, 
