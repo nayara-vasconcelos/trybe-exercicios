@@ -53,7 +53,7 @@
               index: (state.index === maxIndex) ? 0 : state.index + 1,
             };
 
-          case 'PREVIOUS_STATE':
+          case 'PREVIOUS_COLOR':
             return {
               ...state,
               index: (state.index === 0) ? maxIndex : state.index - 1,
@@ -65,6 +65,17 @@
       };
 
       const store = Redux.createStore(reducer);
+
+      const prevBtn = document.getElementById('previous');
+      prevBtn.addEventListener('click', () => {
+        store.dispatch({ type: 'PREVIOUS_COLOR' });
+      });
+
+      const nextBtn = document.getElementById('next');
+      nextBtn.addEventListener('click', () => {
+        store.dispatch({ type: 'NEXT_COLOR' });
+      })
+
     </script>
   </body>
 </html>
