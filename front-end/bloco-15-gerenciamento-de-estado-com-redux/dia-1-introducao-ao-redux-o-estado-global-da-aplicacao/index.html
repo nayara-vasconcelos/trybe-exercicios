@@ -40,8 +40,6 @@
         index: 0,
       };
 
-      const Redux = require('redux');
-
       const reducer = (state = INITIAL_STATE, action) => {
         const { colors } = state;
         const maxIndex = colors.length - 1;
@@ -74,8 +72,16 @@
       const nextBtn = document.getElementById('next');
       nextBtn.addEventListener('click', () => {
         store.dispatch({ type: 'NEXT_COLOR' });
-      })
+      });
 
+      store.subscribe(() => {
+        const { colors, index } = store.getState();
+        console.log();
+        const color = colors[index];
+
+        document.getElementById('value').innerText = color;
+        document.getElementById('container').style.backgroundColor = color;
+      });
     </script>
   </body>
 </html>
