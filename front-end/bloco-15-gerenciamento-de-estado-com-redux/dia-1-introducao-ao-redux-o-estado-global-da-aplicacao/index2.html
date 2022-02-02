@@ -76,6 +76,21 @@
       });
 
       const store = createStore(rootReducers);
+
+      windows.onload = () => {
+        setTimeout(() => {
+          store.dispatch({
+            type: FIRST_ACTION_TYPE, 
+            nome: 'Halita',
+            sobrenome: 'Catiora Sem Vergonha',
+          });
+          store.dispatch({
+            type: SECOND_ACTION_TYPE,
+            nome: 'Safira',
+            sobrenome: 'Outra Catiora Sem Vergonha',
+          })
+        }, 3000);
+      };
     </script>
   </body>
 </html>
