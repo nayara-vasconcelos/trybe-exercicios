@@ -1,0 +1,104 @@
+<!-- Exercício 2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Informações do primeiro Reducer:</h1>
+      <p>Nome: <span id="nome-1">Rodrigo</span></p>
+      <p>Sobrenome: <span id="sobrenome-1">Santos da Silva</span></p>
+      <p>Endereço: <span id="endereco-1">Rua Soldado Mathias, 765</span></p>
+      <p>Cidade: <span id="cidade-1">Belo Horizonte</span></p>
+    </div>
+    <div id="container">
+      <h1>Informações do segundo Reducer:</h1>
+      <p>Nome: <span id="nome-2">Bruna</span></p>
+      <p>Sobrenome: <span id="sobrenome-2">Santana Oliveira</span></p>
+      <p>Endereço: <span id="endereco-2">Rua Holanda, 332</span></p>
+      <p>Cidade: <span id="cidade-2">São Paulo</span></p>
+    </div>
+    <script>
+      const INITIAL_STATE_1 = {
+        nome: 'Rodrigo',
+        sobrenome: 'Santos da Silva',
+        endereco: 'Rua Soldado Mathias, 765',
+        cidade: 'Belo Horizonte',
+      };
+
+      const INITIAL_STATE_2 = {
+        nome: 'Bruna',
+        sobrenome: 'Santana Oliveira',
+        endereco: 'Rua Holanda, 332',
+        cidade: 'São Paulo',
+      };
+
+      // string actions type
+      const FIRST_ACTION_TYPE = 'CHANGE_NAME_AND_LAST_NAME_1';
+      const SECOND_ACTION_TYPE = 'CHANGE_NAME_AND_LAST_NAME_2'
+
+      const myFirstReducer = (state = INITIAL_STATE_1, action) => {
+        switch (action.type) {
+          case FIRST_ACTION_TYPE:
+            return {
+              ...state,
+              nome: action.nome,
+              sobrenome: action.sobrenome,
+            };
+
+          default:
+            return state;
+        }
+      };
+
+      const mySecondReducer = (state = INITIAL_STATE_2, action) => {
+        switch (action.type) {
+          case SECOND_ACTION_TYPE:
+            return {
+              ...state,
+              nome: action.nome,
+              sobrenome: action.sobrenome,
+            };
+
+          default:
+            return state;
+        }
+      };
+
+      const rootReducers = Redux.combineReducers({
+        myFirstReducer,
+        mySecondReducer,
+      });
+
+      const store = Redux.createStore(rootReducers);
+
+      store.subscribe(() => {
+        const { myFirstReducer, mySecondReducer } = store.getState();
+        document.getElementById('nome-1').innerText = myFirstReducer.nome;
+        document.getElementById('sobrenome-1').innerText = myFirstReducer.sobrenome;
+        document.getElementById('nome-2').innerText = mySecondReducer.nome;
+        document.getElementById('sobrenome-2').innerText = mySecondReducer.sobrenome;
+      });
+
+      window.onload = () => {
+        setTimeout(() => {
+          store.dispatch({
+            type: FIRST_ACTION_TYPE, 
+            nome: 'Halita',
+            sobrenome: 'Catiora Sem Vergonha',
+          });
+          store.dispatch({
+            type: SECOND_ACTION_TYPE,
+            nome: 'Safira',
+            sobrenome: 'Outra Catiora Sem Vergonha',
+          })
+        }, 3000);
+      };
+    </script>
+  </body>
+</html>
