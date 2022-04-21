@@ -1,0 +1,19 @@
+{
+  "name": "my-scripts",
+  "version": "1.0.0",
+  "description": "Exercícios de fixação",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "lint": "./node_modules/.bin/eslint .",
+    "imc": "node imc.js"
+  },
+  "author": "Nayara Vasconcelos",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.13.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
