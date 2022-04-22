@@ -12,4 +12,4 @@ const showAvgSpeed = () => {
   console.log(`\nA velocidade média é ${avgSpeed} m/s.\n`);
 };
 
-showAvgSpeed();
+module.exports = showAvgSpeed;

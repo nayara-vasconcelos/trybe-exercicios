@@ -36,4 +36,4 @@ const showBMI = () => {
   console.log(message);
 };
 
-showBMI();
+module.exports = showBMI;

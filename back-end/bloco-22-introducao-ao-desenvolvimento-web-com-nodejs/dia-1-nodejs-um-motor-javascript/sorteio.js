@@ -25,4 +25,4 @@ const playGuessTheNumber = () => {
   } while (playAgain);
 };
 
-playGuessTheNumber();
+module.exports = playGuessTheNumber;
